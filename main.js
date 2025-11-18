@@ -1,80 +1,48 @@
-// Oppg 2a
+// Oppgavesett 3
+//Oppg 1
+// Mikael Feldt - Oppgavesett 3a Operators
+console.log("Mikael Feldt - Oppgavesett 3a Operators");
 
-// 1.
-{
+// Oppg 2. 4)
+let x = 10;
 
-    console.log ("Å deklarere en variabel betyr å fortelle programmet at en variabel finnes, og gi den et navn, men uten å gi den en verdi enda.");
-    let navn = "mikael";
-}
+// Oppg 3.
+let a;
+let b;
+a = 5;
+b = 3;
+console.log (a+b)
 
-// 2.
-{
-    
-    console.log ("Dette betyr at du både oppretter deklarerer variabelen og gir den en verdi samtidig.");
-    let alder = 16
-}
+// Oppg 4
 
-// 3.
-{
-    
-    console.log ("Å initialisere en variabel betyr å gi den en startverdi");
-    alder = 16;
-}
+let c;
+let d;
+c = 10;
+d = 4;
+console.log (c-d)
+// Før så deklarerer jeg c og d så initialiser jeg c og d (gir dem en verdi) og så skriver den ut hva c-d er 
 
-// 4.
-{
-    
-    console.log ("let og var brukes begge til å lage variabler var er den gmle måten og let er den nye");
-}
+// Oppg 5
 
-// 5.
-{
-    
-    console.log ("En variabel kan endres etter at den er opprettet");
-    console.log ("En konstant kan ikke endres etter at den har fått en verdi.");
-}
+let e;
+let f;
+e = 20;
+f = 5;
+console.log (e/f)
+// "/" brukes til å dele
 
-// 6.
+// Oppg 6
 
-console.log ("String, Number, object");
+let g;
+let h;
+e = 6;
+f = 7;
+console.log (g*h)
+// den vil da skrive NaN for de det ikke er et nummer
 
-// 7.
-// a)
-{
-let navn = "joakim";  // deklarert, men ikke fått verdi
-console.log(navn);  // undefined
+// Oppg 7
 
-    let alder = null;   // bevisst satt til "ingen verdi"
-    console.log(alder); //  null
-}
-// b)
-
-console.log ("Å vite forskjellen hjelper deg å forstå hvorfor en variabel mangler verdi");
-
-// Oppg 2b
-
-// 1.
-console.log(typeof 42) // number
-
-console.log(typeof "Hei") // string
-
-console.log(typeof true) //  boolean
-
-console.log(typeof undefined) //  undefined
-
-console.log(typeof null) //  null
-
-console.log(typeof Symbol("id")) //  symbol
-
-console.log(typeof 12345678901234567890n) //  bigint
-
-console.log(typeof {navn: "Ola", alder: 16}) //  object
-
-// 2.
-
-// A) 
-console.log ("det er datatype number og det sier bare at i er 42 ")
-// B)
-console.log ("Nå har i blitt en string ")
-// C)
-console.log ("Denne data typen er en Boolean")
+let resultat
+resultat = (5+3) * 2
+console.log (resultat)
+// Jeg har gitt resultat verdien (5+3)*2 så da skriver den ut 16
