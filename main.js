@@ -1,162 +1,81 @@
-// Oppgavesett 3 a
+// Oppgavesett 4 a,b,
+// Oppg 1 
+console.log(1 === 1) // true 
+console.log(1 === 2) // false
+console.log(3==3) // true
+console.log(2==3) // false
+//en skriver ut true eller false
+
+//Oppg 2
+
+console.log(1 == `2`) // false
+console.log(2 === `2`) // false 
+// 2 = tegn sjekker bare verdien og 3 sjekker verdi og data type
+
+//Oppg 3
+
+console.log(1==1 && 2==2) // true 
+console.log(1===`1` && 2===2) // false
+console.log(1===1 && `2` ===2) // false
+console.log(1==`1`&&2==`2`) // true
+
+// Oppg 4
+
+console.log(1===`1` || 2===2) // true 
+console.log(2==`2` || 1===`1`) // true 
+console.log(2===2 || 1===1 || 3===`3`) // true 
+
+//Oppg 5
+
+console.log(1 !== 1) // false
+console.log(2 !== 1) // true 
+console.log(2 !== 1 && 1 === 1) // true
+console.log(2 !== `2` && 1=== `1` || 2==`2` ) // true
+
 //Oppg 1
-// Mikael Feldt - Oppgavesett 3a Operators
-console.log("Mikael Feldt - Oppgavesett 3a Operators");
 
+console.log(5 > 3) // true
+console.log(5 < 3) // false 
+console.log(10 > 10) // false
+console.log(10 >= 10) // true 
+console.log(8 <= 12) // true
 
-// Oppg 2. 4)
-let x = 10;
+//Oppg 2
 
-// Oppg 3.
-let a;
-let b;
-a = 5;
-b = 3;
-console.log (a+b)
+console.log(4 >= 5) // false
+console.log(7 <= 7) // true 
+console.log(9 <= 4) // false
+console.log(6 > 2) // true
+//krokodille tegnene >< peker fereksempel på det som er sørst eller minst og = betyr at det er likt
 
-// Oppg 4
+//Oppg 3
 
-let c;
-let d;
-c = 10;
-d = 4;
-console.log (c-d)
-// Før så deklarerer jeg c og d så initialiser jeg c og d (gir dem en verdi) og så skriver den ut hva c-d er 
+console.log(5 == 5) // true 
+console.log(5 == '5') // true
+console.log(5 === '5') // false
+console.log(5 != 4) // true
+console.log(5 !== '5') // true
+// == det sjekker bare verdien og === sjekker både datatype og verdi
 
-// Oppg 5
+//Oppg 4
 
-let e;
-let f;
-e = 20;
-f = 5;
-console.log (e/f)
-// "/" brukes til å dele
+console.log(5 > 3 && 10 > 5) // true 
+console.log(5 > 3 && 10 < 5) // false 
+console.log(7 >= 7 && 2 < 5) // true 
+console.log(4 < 2 && 3 > 1) // false
+// for at && skal bli true så må det være riktig på begge sider
 
-// Oppg 6
+//Oppg 5
 
-let g;
-let h;
-e = 6;
-f = 7;
-console.log (g*h)
-// den vil da skrive NaN for de det ikke er et nummer
-
-// Oppg 7
-
-let resultat
-resultat = (5+3) * 2
-console.log (resultat)
-// Jeg har gitt resultat verdien (5+3)*2 så da skriver den ut 16
-
-// Oppgavesett 3 b
-// Oppg 1
-
-let score;
-score = 10;
-score = 20;
-console.log(score)
-
-// Oppg 2
-
-let points;
-points = 10;
-points += 5;
-console.log (points)
-
-// Oppg 3
-
-let lives;
-lives = 3;
-lives -=1;
-console.log (lives)
-// "-=" treker fra
-
-// Oppg 4
-
-let multiplier = 4;
-multiplier *= 2; 
-console.log(multiplier);
-// "*="det ganger
-
-// Oppg 5
-
-let speed
-speed = 180
-speed /= 2
-console.log (speed)
-// "/=" gjør at man deler
+console.log(5 > 3 || 10 > 5) // true
+console.log(5 > 3 || 10 < 5) // true
+console.log(7 < 7 || 2 < 1) // false
+console.log(4 < 2 || 3 > 1) // true
+// for at || skal være true så må den bare være riktig på en av sidene
 
 // Oppg 6
 
-let number;
-number = 10; // nå er number 10
-number += 5; // her pluser den på 5
-number *= 2; // her ganger den med 2
-number -= 4; // er treker den bort 4
-number /= 2; // så deler den på 2
-console.log (number)
-
-// Oppg 7
-
-let tall;
-tall = (1593 + 2386)* 3 / 4;
-console.log (tall)
-// jeg ga tall verdien (1593 + 2386)* 3 / 4; som blir 2984,25
-
-// Oppgavesett 3 c
-// Oppg 2
-
-console.log(5 + 5);
-console.log(10 + 20);
-// da skriver den ut 10 og 30
-
-// Oppg 3
-
-console.log("5" + "5");
-console.log("Hei " + "verden");
-// da skriver den ut 55 som en string og hei verden
-
-// Oppg 4
-console.log("5" + 5);
-console.log(5 + "5");
-console.log("Tall: " + 5 + 5);
-console.log("Sum: " + (5 + 5));
-// alt blir tekst selv om bare en av 5 tallene er dekket med "" (hermetegn) og sum, tall vlirogså tekst
-
-// Oppg 5
-
-console.log("10" - "5");
-console.log("10" * "2");
-console.log("10" / "2");
-console.log("10" - 3);
-console.log("10" * 3);
-console.log("10" / 3);
-// man får tall tilbake
-
-// Oppg 6
-{    
-    console.log("Hei" - "der");
-    console.log("Hei" * 3);
-    console.log("Hei" / 2);
-    // det kommer NaN 3 ganger og det betyr not a number
-}
-
-// Oppg 7
-{    
-    let a = 10;
-    a += 5;
-    console.log(a);
-    
-    let b = "Hei";
-    b += " verden";
-    console.log(b);
-    // den legger sammen Hei og verden og 10 + 5 så den gjør det samme på begge to bare legger de sammen
-}
-
-// Oppg 8 
-{
-    let x;
-    x = 5 + "3";
-    console.log(x);
-    // det lusser sammen 53 men det blir ikke 8 det blir 53 fordi det blir gjort om til tekst fordi jeg satte 3 i hermetegn
-}
+console.log(5 > 3 && 10 > 5 || 2 === 2) // true 
+console.log(4 < 2 && 3 > 1 || 10 === 10) // true 
+console.log(5 === 5 && 3 > 10 || 8 < 12) // true 
+// først må du løse && vis begge er riktig da er den true eller så er den false så må du regne || og det betyr at bare en av sidene trenger å værre riktig for at den skal bli true 
