@@ -1,168 +1,277 @@
-//Oppgavesett-5 a og b
+//Oppgavesett-6 a, b, c og d
 
 //Oppgave 1
-
-{
-const i = 10;
-console.log(`i = ${i}`);
+function sjekkString(verdi) {
+  if (typeof verdi === "string") {
+    console.log("STRING STRING STRING!");
+  } else {
+    console.log("Dette er ikke en String i det hele tatt");
+  }
 }
-// den skriver ut 10 fordi vi har git i verdien 10 og den sak skrive ut verdien
+
+sjekkString(1);        // a)
+sjekkString("1");      // b)
+sjekkString("Navn");   // c)
 
 //Oppgave 2
-
-const x = 10;
-{
-console.log(`i = ${x}`);
+function sjekkSammeType(a, b) {
+  if (typeof a === typeof b) {
+    console.log("Variablene du brukte er av samme type!");
+  } else {
+    console.log("Variablene du brukte er IKKE av samme type!");
+  }
 }
-// her får vi det samme som den forrige
+
+sjekkSammeType("en", 1);   // a)
+sjekkSammeType(1, 1);      // b)
+sjekkSammeType(2, 3);      // c)
+sjekkSammeType("2", "3");  // d)
+sjekkSammeType(2, "3");    // e)
 
 //Oppgave 3
+// A)
+let verdi = 10;
 
-// {
-// const y = 10;
-// }
-// console.log(`y = ${y}`);
-// det kommer en feil meling
+if (typeof verdi === "number") {
+  console.log("Dette er et tall!");
+} else {
+  console.log("Test failed");
+}
+// B)
+
+let a = 3;
+let b = 7;
+
+if (typeof a !== "number" || typeof b !== "number") {
+  if (typeof a !== "number") {
+    console.log("Variabelene er ikke av typen number, den er av typen:", typeof a);
+  }
+  if (typeof b !== "number") {
+    console.log("Variabelene er ikke av typen number, den er av typen:", typeof b);
+  }
+} else {
+  if (a > 5) {
+    console.log("Jeg fant en variabel som var større enn fem! Den hadde verdien:", a);
+  } else if (b > 5) {
+    console.log("Jeg fant en variabel som var større enn fem! Den hadde verdien:", b);
+  }
+}
+
+
+//Oppgave 1
+function summer(a, b) {
+  return a + b;
+}
+
+let resultat = summer(2, 3);
+
+//Oppgave 2
+function addNumbers(a, b) {
+  if (typeof a === "number" && typeof b === "number") {
+    return a + b;
+  } else {
+    return "Error: Begge parametere må være tall";
+  }
+}
+
+console.log(addNumbers(3, 4));  
+console.log(addNumbers(3, "4")); 
+
+//Oppgave 3
+function logText(param1, param2) {
+  if (typeof param1 === "string" && typeof param2 === "string") {
+    console.log(param1 + " og " + param2);
+  } else {
+    console.error("Error: Jeg skriver bare ut tekst!");
+  }
+}
+
+logText("Hei", "Verden");
+logText("Hei", 5);
 
 //Oppgave 4
 
-let z;
-{
-z = 10;
-//utskrift a)
-console.log(`z = ${z}`);
-}
-//utskrift b)
-console.log(`z = ${z}`)
-// begge to skriver ut at z er 10
+function calculate(a, b, operator) {
 
-//Oppgave 5
+  // Sjekk tall
+  if (typeof a !== "number" && typeof b !== "number") {
+    console.error(a + " og " + b + " er ikke tall! Programmet terminerer!");
+    return;
+  }
 
-let a;
-fubar();
-console.log(`a = ${a}`);
-function fubar(){
-a =2;
-}
-// den skriver ut a = 2 vet ikke helt hvordan jeg forklarer det
+  if (typeof a !== "number") {
+    console.error(a + " er ikke et tall! Kan ikke utføre " + operator + ". Programmet terminerer!");
+    return;
+  }
 
-//Oppgave 6
+  if (typeof b !== "number") {
+    console.error(b + " er ikke et tall! Kan ikke utføre " + operator + ". Programmet terminerer!");
+    return;
+  }
 
-let b = 10;
-add(b, 5);
-console.log(b);
-function add(c, d){
-let result = c + d;
-console.log(result);
-}
-// den gir 2 utskrifter 10 og 15 som tekst ikke tall 
 
-// Oppg 1 
-// Hensikten med en funksjon er å samle kode som utfører en bestemt oppgave på ett sted. Da kan man bruke den flere ganger uten å skrive samme kode om igjen, noe som gjør programmet mer ryddig og effektivt.
+  if (!["+", "-", "*", "/"].includes(operator)) {
+    console.error(operator + " er ikke en gyldig operasjon. Programmet terminerer!");
+    return;
+  }
 
-// Oppg 2 a
-function hello () {
-    console.log ("hello world")
-}
+  
+  let resultat;
 
-// b
-// Et funksjonskall er når du "hello()" funksjonen ved å skrive navnet på den etterfulgt av parenteser. Det gjør at koden inni funksjonen blir utført.
+  switch (operator) {
+    case "+":
+      resultat = a + b;
+      break;
+    case "-":
+      resultat = a - b;
+      break;
+    case "*":
+      resultat = a * b;
+      break;
+    case "/":
+      resultat = a / b;
+      break;
+  }
 
-// c 
-// hello()
-
-// Oppg 3
-// En parameter er en variabel som funksjonen kan ta imot når den blir definert.
-// Et argument er verdien du faktisk sender inn når du kaller funksjonen.
-// Parameter = navn i funksjonen
-// Argument = verdi du gir når du kaller funksjonen
-
-// Oppg 4
-function printparameter (tekst) {
-    console.log (tekst)
-}
-printparameter ("hei jeg heter mikael")
-printparameter ("jeg er 16 år")
-
-// Oppg 5
-function printparameter (par1, par2) {
-    console.log (par1 , par2)
+  console.log(a + " " + operator + " " + b + " = " + resultat);
 }
 
-printparameter ("jeg har en hund", "og en katt")
 
-// Oppg 1
+calculate(10, 5, "+"); 
+calculate(10, "5", "*");
+calculate(10, 5, "%");   
 
-// return avslutter en funksjon og sender et resultat tilbake til stedet der funksjonen ble kalt. Alt som står etter return inni funksjonen blir ikke kjørt. 
-// let aa = 20;
-// let bb = 10;
-// function add () {
-//     let aa = 10;
-//     let bb = 5;
-//     let banan = "Banan"
-//     console.log(banan, "dette er inni funksjonen")
-//     return aa + bb
-//     console.log ("denne linjen blir ikke kjørt")
-// }
-
-// const result = add ()
-// console.log (result, "lokalt scope")
-// console.log(aa+bb, "global scope");
-// console.log(banan); //banan is not defined
-
-// Jeg fikk hjelp av monika til å forklare
-
-// Oppgave 2a
-function helloWorld() {
-  return "Hello World";
+// Oppgave 1: Temperaturkonvertering
+function convertToCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
 }
 
-console.log(helloWorld());
-
-// Oppgave 2b
-function returnerParameter(verdi) {
-  return verdi;
+// Oppgave 2: Beregne alder
+function calculateAge(birthYear, currentYear) {
+  return currentYear - birthYear;
 }
 
-console.log(returnerParameter("Test"));
-
-// Oppgave 3a
-function adder(tall1, tall2) {
-  return tall1 + tall2;
+// Oppgave 3: Enkel kalkulator
+function calculate(a, b, operator) {
+  if (operator === "+") {
+    return a + b;
+  } else if (operator === "-") {
+    return a - b;
+  } else {
+    return "Ugyldig operator";
+  }
 }
 
-console.log(adder(3, 4));
-
-// Oppgave 3b
-function multipliser(tall1, tall2) {
-  const resultat = tall1 * tall2;
-  console.log(resultat);
-  return resultat;
+// Oppgave 4: Sjekk om tall er partall
+function isEven(number) {
+  return number % 2 === 0;
 }
 
-multipliser(5, 6);
-
-// Oppgave 4a
-function subtraher(a, b, c) {
-  return a - b - c;
+// Oppgave 5: Finne større tall
+function findMax(a, b) {
+  if (a > b) {
+    return a;
+  } else if (b > a) {
+    return b;
+  } else {
+    return "Tallene er like";
+  }
 }
 
-console.log(subtraher(10, 3, 2));
-
-
-// Oppgave 4b
-function subtraherMedLogg(a, b, c) {
-  console.log("a:", a, "b:", b, "c:", c);
-  return a - b - c;
+// Oppgave 6: Skatteberegning
+function calculateTax(income) {
+  if (income < 50000) {
+    return income * 0.10;
+  } else if (income <= 100000) {
+    return income * 0.20;
+  } else {
+    return income * 0.30;
+  }
 }
 
-console.log(subtraherMedLogg(10, 3, 2));
-
-
-// Oppgave 5
-function ferdig() {
-  let resultat = "Jeg har klart oppgaven veldig bra!";
-  return resultat;
+// Oppgave 7: Valider e-postadresse
+function isValidEmail(email) {
+  return email.includes("@") && email.includes(".");
 }
 
-console.log(ferdig());
+// Oppgave 8: Finn lengste streng
+function findLongestString(str1, str2) {
+  if (str1.length > str2.length) {
+    return str1;
+  } else if (str2.length > str1.length) {
+    return str2;
+  } else {
+    return "Strengene er like lange";
+  }
+}
+
+// Oppgave 9: Kalkuler rabatt
+function calculateDiscount(price, discountPercent) {
+  return price - (price * discountPercent / 100);
+}
+
+// Oppgave 10: Sjekk passordstyrke
+function isStrongPassword(password) {
+  return password.length >= 8 && /\d/.test(password);
+}
+
+//Oppgave 1
+function handleOption(selectedOption) {
+
+  if (typeof selectedOption !== "number") {
+    console.log("Error");
+    return;
+  }
+
+  switch (selectedOption) {
+    case 1:
+      console.log("Brukeren startet programmet");
+      break;
+    case 2:
+      console.log("Brukeren vil gjøre en utskrift");
+      break;
+    case 3:
+      console.log("Brukeren vil avslutte programmet");
+      break;
+    default:
+      console.log("Valget er ikke et gyldig valg. Velg på nytt.");
+  }
+}
+
+handleOption(1);
+handleOption(4);
+handleOption("1");
+
+//Oppgave 2
+function calculator(operator, a, b) {
+  
+  if (
+    typeof operator !== "string" ||
+    typeof a !== "number" ||
+    typeof b !== "number"
+  ) {
+    console.log("syntax error");
+    return;
+  }
+
+  switch (operator) {
+    case "+":
+      console.log(a + b);
+      break;
+    case "-":
+      console.log(a - b);
+      break;
+    case "*":
+      console.log(a * b);
+      break;
+    case "/":
+      console.log(a / b);
+      break;
+    default:
+      console.log("syntax error");
+  }
+}
+
+calculator("+", 5, 3);
+calculator("/", 10, 2);
+calculator("x", 4, 5);
