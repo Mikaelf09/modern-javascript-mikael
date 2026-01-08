@@ -1,4 +1,4 @@
-//Oppgavesett-5 a og b
+//Oppgavesett-5 a, b og c
 
 //Oppgave 1
 
@@ -113,11 +113,11 @@ printparameter ("jeg har en hund", "og en katt")
 // Jeg fikk hjelp av monika til å forklare
 
 // Oppgave 2a
-function helloWorld() {
-  return "Hello World";
-}
+// function helloWorld() {
+//   return "Hello World";
+// }
 
-console.log(helloWorld());
+// console.log(helloWorld());
 
 // Oppgave 2b
 function returnerParameter(verdi) {
@@ -166,3 +166,43 @@ function ferdig() {
 }
 
 console.log(ferdig());
+
+// oppgave 1
+const helloWorld = () => {
+  console.log("Hello World");
+};
+
+helloWorld();
+
+// oppgave 2
+const skrivUt = melding => {
+  console.log(melding);
+};
+
+skrivUt("Hei fra pilfunksjon!");
+
+// oppgave 3
+const skrivTreVerdier = (a, b, c) => {
+  console.log(a, b, c);
+};
+
+skrivTreVerdier(1, "to", true);
+
+// oppgave 4
+const skrivAlt = (...verdier) => {
+  console.log(verdier);
+};
+
+skrivAlt(1, 2, 3, 4, 5);
+
+// oppgave 5
+//Pilfunksjoner gir kortere og mer lesbar kode
+//Passer veldig godt til callbacks, map, filter, forEach
+
+function vanligFunksjon() {
+  console.log(this);
+}
+
+const pilFunksjon = () => {
+  console.log(this);
+};
