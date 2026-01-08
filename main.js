@@ -1,81 +1,168 @@
-// Oppgavesett 4 a,b,
+//Oppgavesett-5 a og b
+
+//Oppgave 1
+
+{
+const i = 10;
+console.log(`i = ${i}`);
+}
+// den skriver ut 10 fordi vi har git i verdien 10 og den sak skrive ut verdien
+
+//Oppgave 2
+
+const x = 10;
+{
+console.log(`i = ${x}`);
+}
+// her får vi det samme som den forrige
+
+//Oppgave 3
+
+// {
+// const y = 10;
+// }
+// console.log(`y = ${y}`);
+// det kommer en feil meling
+
+//Oppgave 4
+
+let z;
+{
+z = 10;
+//utskrift a)
+console.log(`z = ${z}`);
+}
+//utskrift b)
+console.log(`z = ${z}`)
+// begge to skriver ut at z er 10
+
+//Oppgave 5
+
+let a;
+fubar();
+console.log(`a = ${a}`);
+function fubar(){
+a =2;
+}
+// den skriver ut a = 2 vet ikke helt hvordan jeg forklarer det
+
+//Oppgave 6
+
+let b = 10;
+add(b, 5);
+console.log(b);
+function add(c, d){
+let result = c + d;
+console.log(result);
+}
+// den gir 2 utskrifter 10 og 15 som tekst ikke tall 
+
 // Oppg 1 
-console.log(1 === 1) // true 
-console.log(1 === 2) // false
-console.log(3==3) // true
-console.log(2==3) // false
-//en skriver ut true eller false
+// Hensikten med en funksjon er å samle kode som utfører en bestemt oppgave på ett sted. Da kan man bruke den flere ganger uten å skrive samme kode om igjen, noe som gjør programmet mer ryddig og effektivt.
 
-//Oppg 2
+// Oppg 2 a
+function hello () {
+    console.log ("hello world")
+}
 
-console.log(1 == `2`) // false
-console.log(2 === `2`) // false 
-// 2 = tegn sjekker bare verdien og 3 sjekker verdi og data type
+// b
+// Et funksjonskall er når du "hello()" funksjonen ved å skrive navnet på den etterfulgt av parenteser. Det gjør at koden inni funksjonen blir utført.
 
-//Oppg 3
+// c 
+// hello()
 
-console.log(1==1 && 2==2) // true 
-console.log(1===`1` && 2===2) // false
-console.log(1===1 && `2` ===2) // false
-console.log(1==`1`&&2==`2`) // true
+// Oppg 3
+// En parameter er en variabel som funksjonen kan ta imot når den blir definert.
+// Et argument er verdien du faktisk sender inn når du kaller funksjonen.
+// Parameter = navn i funksjonen
+// Argument = verdi du gir når du kaller funksjonen
 
 // Oppg 4
+function printparameter (tekst) {
+    console.log (tekst)
+}
+printparameter ("hei jeg heter mikael")
+printparameter ("jeg er 16 år")
 
-console.log(1===`1` || 2===2) // true 
-console.log(2==`2` || 1===`1`) // true 
-console.log(2===2 || 1===1 || 3===`3`) // true 
+// Oppg 5
+function printparameter (par1, par2) {
+    console.log (par1 , par2)
+}
 
-//Oppg 5
+printparameter ("jeg har en hund", "og en katt")
 
-console.log(1 !== 1) // false
-console.log(2 !== 1) // true 
-console.log(2 !== 1 && 1 === 1) // true
-console.log(2 !== `2` && 1=== `1` || 2==`2` ) // true
+// Oppg 1
 
-//Oppg 1
+// return avslutter en funksjon og sender et resultat tilbake til stedet der funksjonen ble kalt. Alt som står etter return inni funksjonen blir ikke kjørt. 
+// let aa = 20;
+// let bb = 10;
+// function add () {
+//     let aa = 10;
+//     let bb = 5;
+//     let banan = "Banan"
+//     console.log(banan, "dette er inni funksjonen")
+//     return aa + bb
+//     console.log ("denne linjen blir ikke kjørt")
+// }
 
-console.log(5 > 3) // true
-console.log(5 < 3) // false 
-console.log(10 > 10) // false
-console.log(10 >= 10) // true 
-console.log(8 <= 12) // true
+// const result = add ()
+// console.log (result, "lokalt scope")
+// console.log(aa+bb, "global scope");
+// console.log(banan); //banan is not defined
 
-//Oppg 2
+// Jeg fikk hjelp av monika til å forklare
 
-console.log(4 >= 5) // false
-console.log(7 <= 7) // true 
-console.log(9 <= 4) // false
-console.log(6 > 2) // true
-//krokodille tegnene >< peker fereksempel på det som er sørst eller minst og = betyr at det er likt
+// Oppgave 2a
+function helloWorld() {
+  return "Hello World";
+}
 
-//Oppg 3
+console.log(helloWorld());
 
-console.log(5 == 5) // true 
-console.log(5 == '5') // true
-console.log(5 === '5') // false
-console.log(5 != 4) // true
-console.log(5 !== '5') // true
-// == det sjekker bare verdien og === sjekker både datatype og verdi
+// Oppgave 2b
+function returnerParameter(verdi) {
+  return verdi;
+}
 
-//Oppg 4
+console.log(returnerParameter("Test"));
 
-console.log(5 > 3 && 10 > 5) // true 
-console.log(5 > 3 && 10 < 5) // false 
-console.log(7 >= 7 && 2 < 5) // true 
-console.log(4 < 2 && 3 > 1) // false
-// for at && skal bli true så må det være riktig på begge sider
+// Oppgave 3a
+function adder(tall1, tall2) {
+  return tall1 + tall2;
+}
 
-//Oppg 5
+console.log(adder(3, 4));
 
-console.log(5 > 3 || 10 > 5) // true
-console.log(5 > 3 || 10 < 5) // true
-console.log(7 < 7 || 2 < 1) // false
-console.log(4 < 2 || 3 > 1) // true
-// for at || skal være true så må den bare være riktig på en av sidene
+// Oppgave 3b
+function multipliser(tall1, tall2) {
+  const resultat = tall1 * tall2;
+  console.log(resultat);
+  return resultat;
+}
 
-// Oppg 6
+multipliser(5, 6);
 
-console.log(5 > 3 && 10 > 5 || 2 === 2) // true 
-console.log(4 < 2 && 3 > 1 || 10 === 10) // true 
-console.log(5 === 5 && 3 > 10 || 8 < 12) // true 
-// først må du løse && vis begge er riktig da er den true eller så er den false så må du regne || og det betyr at bare en av sidene trenger å værre riktig for at den skal bli true 
+// Oppgave 4a
+function subtraher(a, b, c) {
+  return a - b - c;
+}
+
+console.log(subtraher(10, 3, 2));
+
+
+// Oppgave 4b
+function subtraherMedLogg(a, b, c) {
+  console.log("a:", a, "b:", b, "c:", c);
+  return a - b - c;
+}
+
+console.log(subtraherMedLogg(10, 3, 2));
+
+
+// Oppgave 5
+function ferdig() {
+  let resultat = "Jeg har klart oppgaven veldig bra!";
+  return resultat;
+}
+
+console.log(ferdig());
