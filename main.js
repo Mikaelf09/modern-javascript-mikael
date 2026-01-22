@@ -1,104 +1,162 @@
-//Oppgavesett 7 A og B
+// Oppgavesett-8 A og B
 //A)
 // Oppgave 1
-//A) En array brukes til å lagre flere verdier i én variabel, i en bestemt rekkefølge. Hver verdi får en plass, slik at vi enkelt kan hente ut, endre eller fjerne data.
-//B) Dynamiske kan endre størrelse underveis. Kan inneholde forskjellige datatyper samtidig tall, tekst, objekter osv.
+// for løkke 
+// Brukes når du vet hvor mange ganger noe skal gjentas.
+
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+// while løkke
+
+//Kjører så lenge en betingelse er sann. Brukes når du ikke vet på forhånd hvor mange ganger loopen må kjøres.
+
+let i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+
+//do while løkke
+
+//Ligner på while, men kjører alltid minst én gang, selv om betingelsen er usann.
+
+let u = 0;
+
+do {
+  console.log(u);
+  i++;
+} while (i < 5);
+
+
+// break
+//Brukes for å avbryte en løkke før den egentlig er ferdig.
+
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    break;
+  }
+  console.log(i);
+}
+
+// continue
+//Brukes for å hoppe over én runde i loopen, men fortsette videre.
+
+for (let i = 0; i < 5; i++) {
+  if (i === 2) {
+    continue;
+  }
+  console.log(i);
+}
 
 // Oppgave 2
-//A) 
-let ender = [];
-//B) 
-ender[0] = "Donald Duck";
-ender[1] = "Ole";
-ender[2] = "Dole";
-ender[3] = "Doffen";
-ender[4] = "Skrue McDuck";
-ender[5] = "Petter Smart";
-ender[6] = "B-gjengen";
-ender[7] = "Langbein";
-ender[8] = "Dolly Duck";
-ender[9] = "Fettern Anton";
-//C)
-console.log(ender[2]);
-console.log(ender[5]);
-console.log(ender[8]);
 
-//Oppgave 3
-//A)
-//En index er posisjonen til et element i en array.
-//B)
-//Første index er 0.
-//C)
-// array.length - 1 
-//D)
-//array.length forteller hvor mange elementer arrayen inneholder.
-//E)
-//Hvis en array har lengde 10, er siste index 9.Lengden er alltid én mer enn høyeste index.
+const navneliste = [
+  'Geir', 'Mikael', 'Sander', 'Erik', 'Joakim',
+  'Mark', 'Jonatan', 'Oleksander', 'Artem', 'Elias', 'Maksym'
+];
+
+for (let i = 0; i < navneliste.length; i++) {
+  console.log(navneliste[i] + ' har ' + navneliste[i].length + ' bokstaver');
+}
+
+// Oppgave 3
+
+const Navneliste = [
+  'Geir', 'Mikael', 'Sander', 'Erik', 'Joakim',
+  'Mark', 'Jonatan', 'Oleksander', 'Artem', 'Elias', 'Maksym'
+];
+
+let reversedList = [];
+
+for (let i = Navneliste.length - 1; i >= 0; i--) {
+  reversedList.push(Navneliste[i]);
+}
 
 // Oppgave 4
-//A)
-// typeof retunerer object når den er brukt i en array.
-//B)
-// Array.isArray(verdi);
-//C)
-function sjekkArray(parameter) {
-  if (Array.isArray(parameter)) {
-    console.log("Argumentet er en array");
-  } else {
-    console.log("Argumentet er ikke en array");
+
+function reduceToOddNumber(number) {
+
+  if (typeof number === 'number') {
+
+    do {
+      number = number / 2;
+    } while (number % 2 === 0);
+
+    return number;
   }
 }
 
-sjekkArray([1, 2, 3]);
-sjekkArray("hei");
-
 //B)
 // Oppgave 1
-let arr1 = [10, 20, 30];
-console.log(arr1[1]);
+let navn = ["Odin", "Thor", "Loki", "Freya", "Baldur", "Frigg", "Tyr", "Heimdall", "Hel", "Idunn", "Njord", "Skadi", "Fenrir", "Jormungandr", "Sleipnir"];
+
+for (let i = 0; i < navn.length; ++i) {
+    console.log(navn[i]);
+}
 
 // Oppgave 2
-let arr2 = [];
-arr2[0] = "hello";
-arr2[1] = "world";
-console.log(arr2);
+let tall = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30];
+let sum = 0;
+
+for (let i = 0; i < tall.length; ++i) {
+    sum += tall[i];
+}
+
+console.log("Summen av tallene er:", sum);
 
 // Oppgave 3
-let arr3 = [1, 2, 3, 4, 5];
-console.log(arr3.length);
+//a)
 
-// Oppgave 4
-let arr4 = ["eple", "banan", "jordbær"];
-arr4[1] = "blåbær";
-console.log(arr4);
+let Navn = [
+    "Anne", "Jan", "Per", "Bjørn", "Ole", "Lars", "Inger", "Kjell", "Kari", "Thomas", 
+    "Ingrid", "Svein", "Marit", "Knut", "Tor", "Liv", "Geir", "Martin", "Hans", "Morten",
+    "Andreas", "Erik", "Ida", "Arne", "Maria", "Anna", "Terje", "Ann", "Eva", "Daniel", 
+    "Anders", "John", "Rune", "Odd", "Hilde", "Nina", "Marianne", "Magnus", "Kristin",
+    "Eli","Ola", "Siri", "Einar", "Gunnar", "Randi", "Bente", "Johan", "Mona", "Trond", 
+    "Hege","Espen", "Siv", "Steinar", "Elin", "Kjetil", "Linda", "Harald", "Grete", "Leif", 
+    "Anita", "Roar", "Tone", "Jon", "Camilla", "Stig", "Lene", "Arild", "Gry", "Frode", 
+    "Ragnhild", "Pål", "Britt", "Øyvind", "Laila", "Vidar", "Ellen", "Dag", "Sissel", "Knut", 
+    "Anne", "Per", "Inger", "Bjørn", "Kari", "Ole", "Lars", "Jan", "Marit", "Thomas", 
+    "Ingrid", "Mohammed", "Ali", "Ahmed", "Aisha", "Fatima", "Hassan", "Sara", "Yousef", "Amira", "Omar"
+];
 
-// Oppgave 5
-let arr5 = [5, 10, 15];
-arr5[3] = 20;
-console.log(arr5);
+function tellNavn(navnSomSøkes, array) {
+    let antall = 0;
+    for (let i = 0; i < array.length; ++i) {
+        if (array[i] === navnSomSøkes) {
+            antall++;
+        }
+    }
+    console.log(`${navnSomSøkes} er oppført ${antall} ganger i arrayen som er ${array.length} lang`);
+}
 
-// Oppgave 6
-let arr6 = ["rød", "grønn", "blå"];
-console.log(arr6[arr6.length - 1]);
+tellNavn("Arne", Navn);
 
-// Oppgave 7
-let arr7 = [7, 14, 21];
-console.log(arr7[0] < arr7[2]);
+// b)
+function tellAlleNavn(array) {
+    let unikeNavn = [];
 
-// Oppgave 8
-let arr8 = [2, 4, 6, 8];
-console.log(arr8[0] + arr8[2]);
+    // Lag liste med unike navn
+    for (let i = 0; i < array.length; ++i) {
+        let funnet = false;
+        for (let j = 0; j < unikeNavn.length; ++j) {
+            if (array[i] === unikeNavn[j]) {
+                funnet = true;
+                break;
+            }
+        }
+        if (!funnet) {
+            unikeNavn.push(array[i]);
+        }
+    }
 
-// Oppgave 9
-let arr9 = [[1, 2, 3], [4, 5, 6]];
-console.log(arr9[1][1]);
+    // Tell hver forekomst av unike navn
+    for (let i = 0; i < unikeNavn.length; ++i) {
+        tellNavn(unikeNavn[i], array);
+    }
+}
 
-// Oppgave 10
-let x = 100;
-let y = 200;
-let z = 300;
-let arr10 = [x, y, z];
-console.log(arr10);
-
-
-
+tellAlleNavn(Navn);
