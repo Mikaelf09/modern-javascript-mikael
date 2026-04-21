@@ -1,100 +1,105 @@
-// Oppgavesett-9
-// Oppgave 1
-const elev1 = {
-  fornavn: "Mikael",
-  etternavn: "Feldt",
-  alder: 16
-};
-
-const elev2 = {
-  fornavn: "Joakim",
-  etternavn: "Sørbo",
-  alder: 18
-};
-
-const elev3 = {
-  fornavn: "Sander",
-  etternavn: "Tennstrand",
-  alder: 16
-};
-
-const elev4 = {
-  fornavn: "jonatan",
-  etternavn: "Brekke",
-  alder: 17
-};
-
-// Oppgave 2
-function printElev(elev) {
-  console.log(
-    `Navn: ${elev.fornavn} Etternavn: ${elev.etternavn} Alder: ${elev.alder}`
-  );
+// Oppgavesett-10
+// 1.a
+function helloWorld() {
+    console.log("Hello World");
 }
 
-printElev(elev1);
-
-// Oppgave 3
-function carFactory(antallSeter, hestekrefter, modell, type) {
-  return {
-    antallSeter,
-    hestekrefter,
-    modell,
-    type
-  };
+function imalive() {
+    console.log("I’m alive!")
 }
 
-const biler = [
-  carFactory(5, 150, "Focus", "sedan"),
-  carFactory(7, 200, "Explorer", "SUV"),
-  carFactory(5, 180, "Passat", "stasjonsvogn"),
-  carFactory(2, 300, "Mustang", "coupe")
-];
+function green() {
+    console.log("Its not easy being green!")
+}
 
-console.log(biler);
+function executor(a, b, c) {
+    a();
+    b();
+    c();
+}
 
-// Oppgave 4
-function carFactory(antallSeter, hestekrefter, modell, type) {
-  return {
-    antallSeter,
-    hestekrefter,
-    modell,
-    type,
-    serienummer: null,
-    genererSerienummer() {
-      this.serienummer = Math.floor(Math.random() * 1_000_000);
+executor(helloWorld, imalive, green);
+
+//b
+
+executor(
+    () => console.log("Amors piler treffer alltid i hjertet!"),
+    () => console.log("Cri’ Cri’ d’amore!"),
+    () => console.log("Parles vous francois?")
+);
+
+// 2
+// a
+function greet(name) {
+    console.log(`Hello ${name}`);
+}
+
+function login(name) {
+    console.log(`${name} just logged in`);
+}
+
+function logout(name) {
+    console.log(`${name} just logged out`);
+}
+
+function executorWithArg(name, a, b, c) {
+    a(name);
+    b(name);
+    c(name);
+}
+
+
+executorWithArg("Mikael", greet, login, logout);
+
+// b
+
+executorWithArg(
+    "kk",
+    () => console.log("Franskmenn liker ikke piler"),
+    () => console.log("Piler kan være farlige, eller de kan bare vise vei!"),
+    () => console.log("Pilgård er ikke en pil, selv om han piler fra sted til sted!")
+);
+
+// oppgave 3
+
+function runRoutines(...routines) {
+    let totalDelay = 0;
+    let lastTime = Date.now();
+
+    for (let i = 0; i < routines.length; i++) {
+        const delayBetweenCalls = Math.floor(Math.random() * 3) * 1000;
+        totalDelay += delayBetweenCalls;
+
+        setTimeout(() => {
+            const currentTime = Date.now();
+            const secondsPassed = ((currentTime - lastTime) / 1000).toFixed(2);
+
+            console.log(`Det har gått ${secondsPassed} sekunder siden forrige funksjonskall`);
+            routines[i]();
+
+            lastTime = currentTime;
+        }, totalDelay);
     }
-  };
 }
 
-const bil1 = carFactory(5, 150, "Focus", "sedan");
-bil1.genererSerienummer();
-
-console.log(bil1);
-
-// Oppgave 5
-function merkeFactory(merke) {
-  return function (antallSeter, hestekrefter, modell, type) {
-    return {
-      merke,
-      antallSeter,
-      hestekrefter,
-      modell,
-      type,
-      serienummer: null,
-      genererSerienummer() {
-        this.serienummer = Math.floor(Math.random() * 1_000_000);
-      }
-    };
-  };
+function routineOne() {
+    console.log("Routine 1 kjører");
 }
 
-const fordFactory = merkeFactory("koenigsegg");
+function routineTwo() {
+    console.log("Routine 2 kjører");
+}
 
-const ford1 = fordFactory(2, 1600, "Regera", "sportsbil");
-const ford2 = fordFactory(2, 1600, "Jesko", "sportsbil");
+function routineThree() {
+    console.log("Routine 3 kjører");
+}
 
-ford1.genererSerienummer();
-ford2.genererSerienummer();
+const routineList = [routineOne, routineTwo, routineThree];
+const testRoutines = [];
 
-console.log(ford1);
-console.log(ford2);
+for (let i = 0; i < 10; i++) {
+    const randomIndex = Math.floor(Math.random() * routineList.length);
+    testRoutines.push(routineList[randomIndex]);
+}
+
+runRoutines(...testRoutines);
